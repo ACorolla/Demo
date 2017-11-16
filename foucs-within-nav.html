@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            font-family: helvetica, arial, sans-serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav ul,
+        .nav ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list {
+            background: #fafafa;
+            border-bottom: 1px solid #444;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-list>li {
+            display: inline-block;
+        }
+
+        .nav-list a {
+            display: block;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .nav-list a:hover,
+        .nav-list a:focus {
+            background: #222;
+            color: #fff;
+        }
+
+        .has-drop {
+            position: relative;
+        }
+
+        .nav-list-drop {
+            position: absolute;
+            left: 0;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: transform .2s ease-in-out,
+            opacity .1s ease-out;
+            overflow: hidden;
+            z-index: 1;
+            background: #fafafa;
+            border: 1px solid #444;
+            border-top: 0;
+            min-width: 100%;
+        }
+
+        .nav-list-drop a {
+            padding: 12px 20px;
+            white-space: nowrap;
+        }
+
+        .nav-list a:focus+.nav-list-drop,
+        .has-drop:hover .nav-list-drop,
+        .nav-list-drop:focus-within {
+            opacity: 1;
+            transform: translateY(0px);
+            height: auto;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header role="banner" aria-label="Primary">
+            <nav role="navigation" aria-label="Primary" id="anv" class="nav">
+                <ul id="nav-inner" class="nav-list">
+                    <li class="has-drop">
+                        <a href="">
+                            Drop Down
+                        </a>
+                        <ul class="nav-list-drop">
+                            <li>
+                                <a href="">
+                                    Item 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Item 2
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            Normal
+                        </a>
+                    </li>
+
+                    <li class="has-drop">
+                        <a href="">
+                            Drop Down
+                        </a>
+                        <ul class="nav-list-drop">
+                            <li>
+                                <a href="">
+                                    Item 1 has a long name
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Item 2
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+</body>
+
+</html>
